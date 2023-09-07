@@ -1,16 +1,15 @@
 import { getCart } from 'lib/shopify';
-// import { cookies } from 'next/headers';
+import Cookies from 'js-cookie';
 import CartModal from './modal';
 
 export default async function Cart() {
-  const cartId = 
-  // cookies().get('cartId')?.value
-  null;
+  const cartId = Cookies.get('cartId');
   let cart;
 
   if (cartId) {
     cart = await getCart(cartId);
   }
+
 
   return <CartModal cart={cart} />;
 }
