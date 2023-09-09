@@ -25,12 +25,12 @@ export default async function Footer() {
           </p>
           {/* <hr className="mx-4 hidden h-4 w-[1px] border-l border-neutral-400 md:inline-block" /> */}
           {/* <p>Designed by Webibee</p> */}
-          <p className="md:ml-auto">
+          {/* <p className="md:ml-auto">
             Crafted by{' '}
             <a href="https://webibee.com" className="text-black dark:text-white">
               Webibee
             </a>
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>
