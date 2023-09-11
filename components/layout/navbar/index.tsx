@@ -28,7 +28,7 @@ export default async function Navbar() {
           {menu.length ? (
             <ul className="hidden gap-6 text-sm md:flex md:items-center">
               {menu.map((item: Menu) => {
-                console.log("menu data",item)
+                // console.log("menu data",item)
                return <li key={item.title}>
                   <Link
                     href={item.path}

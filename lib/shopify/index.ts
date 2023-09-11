@@ -324,7 +324,8 @@ export async function getCollections(): Promise<Collection[]> {
         description: 'All products'
       },
       path: '/search',
-      updatedAt: new Date().toISOString()
+      updatedAt: new Date().toISOString(),
+      image:""
     },
     // Filter out the `hidden` collections.
     // Collections that start with `hidden-*` need to be hidden on the search page.
