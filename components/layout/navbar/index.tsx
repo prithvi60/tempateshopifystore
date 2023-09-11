@@ -27,8 +27,9 @@ export default async function Navbar() {
           </Link>
           {menu.length ? (
             <ul className="hidden gap-6 text-sm md:flex md:items-center">
-              {menu.map((item: Menu) => (
-                <li key={item.title}>
+              {menu.map((item: Menu) => {
+                console.log("menu data",item)
+               return <li key={item.title}>
                   <Link
                     href={item.path}
                     className="text-neutral-500 underline-offset-4 hover:text-black hover:underline dark:text-neutral-400 dark:hover:text-neutral-300"
@@ -36,7 +37,8 @@ export default async function Navbar() {
                     {item.title}
                   </Link>
                 </li>
-              ))}
+}
+              )}
             </ul>
           ) : null}
         </div>
