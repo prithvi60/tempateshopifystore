@@ -87,7 +87,9 @@ export type SEO = {
   title: string;
   description: string;
 };
-
+export type CollectionImage = {
+  originalSrc: string;
+};
 export type ShopifyCart = {
   id: string;
   checkoutUrl: string;
@@ -106,6 +108,7 @@ export type ShopifyCollection = {
   description: string;
   seo: SEO;
   updatedAt: string;
+  image:CollectionImage;
 };
 
 export type ShopifyProduct = {

@@ -35,13 +35,14 @@ export function GridTileImage({
             'transition duration-300 ease-in-out group-hover:scale-105': isInteractive
           })}
           {...props}
+          // src={image}
         />
       ) : null}
       {label ? (
         <Label
           title={label.title}
-          amount={label.amount}
-          currencyCode={label.currencyCode}
+          // amount={label.amount}
+          // currencyCode={label.currencyCode}
           position={label.position}
         />
       ) : null}

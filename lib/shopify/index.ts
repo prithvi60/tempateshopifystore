@@ -314,17 +314,22 @@ export async function getCollections(): Promise<Collection[]> {
     tags: [TAGS.collections]
   });
   const shopifyCollections = removeEdgesAndNodes(res.body?.data?.collections);
+  // add a custom placeholder image in image
   const collections = [
     {
       handle: '',
-      title: 'All',
+      title: 'Printables',
       description: 'All products',
       seo: {
         title: 'All',
         description: 'All products'
       },
       path: '/search',
-      updatedAt: new Date().toISOString()
+      updatedAt: new Date().toISOString(),
+      image:{
+        originalSrc:"https://cdn.shopify.com/s/files/1/0822/2090/8842/collections/250gsm_Rives_Shetland__11210.jpg?v=1693886623"
+      
+      }
     },
     // Filter out the `hidden` collections.
     // Collections that start with `hidden-*` need to be hidden on the search page.

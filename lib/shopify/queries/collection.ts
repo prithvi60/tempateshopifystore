@@ -6,6 +6,9 @@ const collectionFragment = /* GraphQL */ `
     handle
     title
     description
+    image {
+      originalSrc
+    }
     seo {
       ...seo
     }
