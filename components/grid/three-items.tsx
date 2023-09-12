@@ -15,15 +15,19 @@ function ThreeItemGridItem({
   priority?: boolean;
 }) {
   console.log("collection data",item)
+
+const path=item.path.split('/search')
+const splitPath=path[1];
+
   return (
     <div
       className={size === 'full' ? 'md:col-span-4 md:row-span-2' : 'md:col-span-2 md:row-span-1'}
     >
-      <Link className="relative block aspect-square h-full w-full" href={`/product/${item.handle}`}>
+      <Link className="relative block aspect-square h-full w-full" href={`/search/${splitPath}`}>
         <GridTileImage
         // collection images
-          // src={item.image.url}
-          src={"/flow.png"}
+          src={item.image.originalSrc}
+          // src={"/flow.png"}
           fill
           sizes={
             size === 'full' ? '(min-width: 768px) 66vw, 100vw' : '(min-width: 768px) 33vw, 100vw'
@@ -56,7 +60,7 @@ export async function ThreeItemGrid() {
   // const [firstProduct, secondProduct, thirdProduct] = homepageItems;
   const [firstProduct, secondProduct, thirdProduct] = collections;
 
-  console.log("menu data",collections)
+  // console.log("menu data",collections)
 
   return (
     <section className="mx-auto grid max-w-screen-2xl gap-4 px-4 pb-4 md:grid-cols-6 md:grid-rows-2">
