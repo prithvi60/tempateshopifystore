@@ -1,10 +1,10 @@
 'use server';
 
-import Cookies from 'js-cookie';
 import { addToCart, createCart, getCart, removeFromCart, updateCart } from 'lib/shopify';
+import { cookies } from 'next/headers';
 
 export const addItem = async (variantId: string | undefined): Promise<String | undefined> => {
-  let cartId = Cookies.get('cartId');
+  let cartId = cookies().get('cartId')?.value;
   let cart;
 
   if (cartId) {
@@ -14,7 +14,7 @@ export const addItem = async (variantId: string | undefined): Promise<String | u
   if (!cartId || !cart) {
     cart = await createCart();
     cartId = cart.id;
-    Cookies.set('cartId', cartId);
+    cookies().set('cartId', cartId);
   }
 
   if (!variantId) {
@@ -29,7 +29,7 @@ export const addItem = async (variantId: string | undefined): Promise<String | u
 };
 
 export const removeItem = async (lineId: string): Promise<String | undefined> => {
-  const cartId = Cookies.get('cartId');
+  const cartId = cookies().get('cartId')?.value;
 
   if (!cartId) {
     return 'Missing cart ID';
@@ -50,7 +50,7 @@ export const updateItemQuantity = async ({
   variantId: string;
   quantity: number;
 }): Promise<String | undefined> => {
-  const cartId = Cookies.get('cartId');
+  const cartId = cookies().get('cartId')?.value;
 
   if (!cartId) {
     return 'Missing cart ID';

@@ -14,7 +14,7 @@ function ThreeItemGridItem({
   size: 'full' | 'half';
   priority?: boolean;
 }) {
-  console.log("collection data",item)
+  // console.log("collection data",item)
 
 const path=item.path.split('/search')
 const splitPath=path[1];
